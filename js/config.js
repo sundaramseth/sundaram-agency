@@ -12,9 +12,9 @@ const BUSINESS_CONFIG = {
   subtagline: "I help local businesses, startups, and service providers turn visitors into paying clients through fast, modern websites and custom WhatsApp business automation.",
 
   // Contact Details
-  phone: "+91 9335770023",
-  phoneRaw: "+919335770023",
-  whatsappNumber: "919335770023", // WhatsApp international format (no +, no dashes)
+  phone: "+91 9140910217",
+  phoneRaw: "+919140910217",
+  whatsappNumber: "919140910217", // WhatsApp international format (no +, no dashes)
   email: "sundaramseth755@gmail.com", // Replace with your client's primary inbox
 
   // Operating Location
