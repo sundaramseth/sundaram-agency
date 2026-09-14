@@ -133,7 +133,7 @@ function setCurrentYear() {
 
 function initWhatsAppButtons() {
   // Direct international number without +, dashes, or spaces
-  const number = "919335770023"; 
+  const number = "919140910217"; 
   const triggers = document.querySelectorAll(".js-whatsapp-trigger");
 
   triggers.forEach((btn) => {
@@ -180,7 +180,7 @@ function initContactForm() {
       "• *Service:* " + service + "\n" +
       "• *Details:* " + (notes || "None specified.");
 
-    const whatsappUrl = "https://wa.me/919335770023?text=" + encodeURIComponent(messageText);
+    const whatsappUrl = "https://wa.me/919140910217?text=" + encodeURIComponent(messageText);
 
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     form.reset();
