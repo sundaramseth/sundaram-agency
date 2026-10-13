@@ -48,3 +48,27 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('clientPhone')?.addEventListener('input', event => event.target.setCustomValidity(''));
   const year = document.getElementById('copyrightYear'); if (year) year.textContent = new Date().getFullYear();
 });
+
+// Manual carousel: touch scrolling, keyboard support and no auto rotation.
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('projectTrack');
+  if (!track) return;
+  const prev = document.getElementById('projectPrev');
+  const next = document.getElementById('projectNext');
+  function move(direction) {
+    const card = track.querySelector('.project-card');
+    const step = card.getBoundingClientRect().width + parseFloat(getComputedStyle(track).gap || 0);
+    track.scrollBy({left:direction*step,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  }
+  function sync() {
+    prev.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= track.scrollWidth-track.clientWidth-2;
+    const cards = [...track.querySelectorAll('.project-card')];
+    const edge = track.getBoundingClientRect().left;
+    const index = cards.reduce((best,card,i) => Math.abs(card.getBoundingClientRect().left-edge)<Math.abs(cards[best].getBoundingClientRect().left-edge)?i:best,0);
+    document.getElementById('projectPosition').textContent = `${index+1} / ${cards.length}`;
+  }
+  prev.addEventListener('click',()=>move(-1));next.addEventListener('click',()=>move(1));
+  track.addEventListener('keydown',event=>{if(event.target!==track)return;if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();move(event.key==='ArrowRight'?1:-1);}});
+  track.addEventListener('scroll',sync,{passive:true});window.addEventListener('resize',sync);sync();
+});

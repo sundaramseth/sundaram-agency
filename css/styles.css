@@ -1421,3 +1421,22 @@ input:focus, select:focus, textarea:focus {
     text-align: center;
   }
 }
+/* Business project carousel */
+.project-showcase{margin-bottom:3.5rem;min-width:0}
+.project-toolbar{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;margin-bottom:1.5rem}
+.project-toolbar h3,.profile-heading h3{font-size:1.5rem;line-height:1.3;margin-bottom:.5rem}
+.project-toolbar p,.profile-heading p{color:var(--text-muted);font-size:.95rem}
+.project-controls{display:flex;gap:.65rem;flex-shrink:0}
+.project-controls button{width:46px;height:46px;border:1px solid var(--border-subtle);background:var(--bg-surface);color:var(--text-primary);border-radius:50%;font-size:1.35rem;cursor:pointer}
+.project-controls button:hover{border-color:var(--accent-emerald);color:var(--accent-emerald)}
+.project-controls button:disabled{opacity:.35;cursor:default}
+.project-controls button:focus-visible,.project-track:focus-visible{outline:2px solid var(--accent-emerald);outline-offset:4px}
+.project-track{display:flex;gap:2rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;padding-bottom:1rem;scrollbar-width:thin;scrollbar-color:var(--accent-emerald) var(--bg-surface)}
+.project-card{flex:0 0 calc((100% - 2rem)/2);scroll-snap-align:start;min-width:0;transition:border-color .2s}
+.project-card:hover{border-color:var(--accent-emerald)}
+.project-card .portfolio-media{height:auto;aspect-ratio:1.7;background:#1e293b}
+.project-card .portfolio-media img{object-position:top}
+.project-caption{display:flex;justify-content:space-between;gap:1rem;color:var(--text-muted);font-size:.8rem;margin-top:.7rem}
+.profile-heading{margin-bottom:1.5rem}
+@media(max-width:640px){.project-card{flex-basis:90%}.project-track{gap:1rem}.project-toolbar{align-items:flex-end}.project-toolbar h3{font-size:1.25rem}.project-toolbar .section-subtitle{font-size:.65rem}.project-controls button{width:38px;height:38px}.project-caption{font-size:.72rem}.portfolio-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.project-track{scroll-behavior:auto}}
