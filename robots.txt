@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://sundaramsethweb.web.app/sitemap.xml
+Sitemap: https://sundaram-agency.vercel.app/sitemap.xml

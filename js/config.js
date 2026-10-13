@@ -30,7 +30,7 @@ const BUSINESS_CONFIG = {
   portfolioUrl: "https://sundaramsethweb.web.app/",
   fiverrUrl: "https://www.fiverr.com/sundaramseth755?public_mode=true",
   linkedinUrl: "https://www.linkedin.com/in/sundaramseth/",
-  githubUrl: "https://github.com/",
+  githubUrl: "https://github.com/sundaramseth",
 
   // Dynamic WhatsApp Messages for context-specific clicks
   whatsappMessages: {
